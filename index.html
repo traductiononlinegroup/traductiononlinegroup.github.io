@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- STYLES -->
-    <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Traduction Online Group</title>
 </head>
 <body>
     <div id="container">
@@ -22,47 +22,94 @@
             <div id="page-1">
                 <div id="row">
                     <div id="col-1">
-                        <div id="title-bold">Give your documents<span>a global voice</span></div>
-                        <p>Professional translation services<span>by highly qualified translators</span></p>
-                        <button id="contact-us" tabindex="1">Contact us</button>
+                        <div id="title-bold">Parlez le monde<span>un mot à la fois</span></div>
+                        <p>Nous nous engageons à respecter et garantir la confidentialité de vos documents.<span>Et nous nous engageons également à respecter le délai convenu pour la traduction.</span></p>
+                        <button id="contact-us" tabindex="1">Contactez-nous</button>
                     </div>
                     <div id="col-2">
                         <div class="flag" id="flag-english">
-                            <img src="./united-kingdom.png" alt="English">
+                            <img src="./img/united-kingdom.png" alt="English">
                         </div>
                         <div class="flag" id="flag-arabic">
-                            <img src="./algeria.png" alt="English">
+                            <img src="./img/algeria.png" alt="English">
                         </div>
                         <div class="flag" id="flag-french">
-                            <img src="./france.png" alt="English">
+                            <img src="./img/france.png" alt="English">
                         </div>
                         <div class="flag" id="flag-spanish">
-                            <img src="./flag.png" alt="English">
+                            <img src="./img/flag.png" alt="English">
                         </div>
                         <div class="flag" id="flag-german">
-                            <img src="./germany.png" alt="English">
+                            <img src="./img/germany.png" alt="English">
                         </div>
                     </div>
                 </div>
             </div>
             <div id="page-2">
-                Languages:
-                English
-                Arabic
-                French
-                Spanish
-                German
+                <!-- <h3>Languages:</h3>
+                <ul>
+                    <li>English</li>
+                    <li>Arabic</li>
+                    <li>French</li>
+                    <li>Spanish</li>
+                    <li>German</li>
+                </ul> -->
+                <div class="card">
+                    <div class="card-title">
+                        Traduction d'articles de recherche scientifique
+                    </div>
+                    <div class="card-details">
+                        <ul>
+                            <li>Science & Technologie</li>
+                            <li>Sciences Humaines & Sociales</li>
+                            <li>Sciences Economiques</li>
+                            <li>Sciences de l'Education</li>
+                            <li>Sciences Juridiques & Politiques</li>
+                            <li>Sciences du Langage & des Litératures</li>
+                            <li>etc.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        Traduction de documents académiques
+                    </div>
+                    <div class="card-details">
+                        <ul>
+                            <li>Rapports</li>
+                            <li>Projets de recherche</li>
+                            <li>Mémoires</li>
+                            <li>Thèses</li>
+                            <li>etc.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        Traduction de tout autre document
+                    </div>
+                    <div class="card-details">
+                        Traduction de tout types de documents y compris:
+                        <ul>
+                            <li>Word</li>
+                            <li>PDF</li>
+                            <li>Image</li>
+                            <li>Photo</li>
+                            <li>etc.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div id="page-3">
                 <div id="contact-us-title">
-                    <div>Contact us</div>
+                    <div>Contactez-nous</div>
                 </div>
-                <div id="contact-us-form">
-                    <input type="text" name="name" id="name" placeholder="Name" tabindex="2" required autocomplete="on">
-                    <input type="email" name="email" id="email" placeholder="Email" tabindex="3" required autocomplete="on">
-                    <textarea name="message" id="message" cols="1" rows="10" placeholder="Message" tabindex="4" required autocomplete="off"></textarea>
+                <!-- <div id="contact-us-form">
+                    <input type="text" name="name" id="name" placeholder="Name" tabindex="2" required autocomplete="on" title="Enter your name">
+                    <input type="email" name="email" id="email" placeholder="Email" tabindex="3" required autocomplete="on" title="Enter your email">
+                    <textarea name="message" id="message" cols="1" rows="10" placeholder="Message" tabindex="4" required autocomplete="off"  title="Enter your message request"></textarea>
                     <button type="button" id="send" tabindex="5">Send</button>
-                </div>
+                </div> -->
                 <div id="contact-us-info-container">
                     <div id="contact-us-info">
                         <div class="icon" id="icon-gps"></div>
@@ -70,17 +117,17 @@
                         <div class="icon" id="icon-phone"></div>
                         <div class="text" id="text-phone">(+213) 0671 735 955</div>
                         <div class="icon" id="icon-email"></div>
-                        <div class="text" id="text-email">traduction-online-group@outlook.com</div>
+                        <div class="text" id="text-email">traduction-online-group@hotmail.com</div>
                         <!-- <div class="info-line" id="info-line-1"><i></i>Saida, Algeria</div>
                         <div class="info-line" id="info-line-2"><i></i>(213) 0660 123 456</div>
                         <div class="info-line" id="info-line-3"><i></i>traduction@email.com</div> -->
                     </div>
                 </div>
-                <button id="go-to-top" tabindex="-1">^</button>
+                <button id="go-to-top" tabindex="-1"></button>
             </div>
         </section>
     </div>
     <!-- SCRIPT -->
-     <script src="./script.js"></script>
+     <script src="./js/script.js"></script>
 </body>
 </html>
