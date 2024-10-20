@@ -1,6 +1,7 @@
 /* VARIABLES */
 :root {
     --nav-bg: #154360;
+    --highlight-blue: #2874a6;
     --page-1-bg: #aed6f1;
     --page-2-bg: #85c1e9;
     --page-3-bg: #5dade2;
@@ -8,7 +9,7 @@
     --btn-bg: #1D4ED8;
     --btn-hover-bg: #3B82F6;
     --highlight-text: #f7f9f9;
-    --text-color: #17202a;
+    --text-color: #212427;
 }
 
 /* GENERAL STYLING */
@@ -17,7 +18,7 @@
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
@@ -45,35 +46,49 @@ body {
 #nav #logo {
     width: 50px;
     height: 50px;
-    /* padding: 5px;
-    margin: 5px; */
     position: absolute;
     left: 30px;
     border-radius: 50%;
     background-image: url(/img/foreign-language_7177869.png);
     background-size: cover;
-    /* background-color: var(--highlight-text); */
     box-shadow: 0 0 16px rgba(255, 255, 255, 0.8);
 }
 
 #nav #title-logo {
     font-size: 2.5rem;
-    font-weight: bolder;
+    font-weight: 900;
     color: var(--highlight-text);
     text-shadow: 0 0 10px rgba(255, 255, 255, .4);
 }
 
+#nav #title-logo::before {
+    content: "TRADUCTION ONLINE GROUP";
+}
+
 /* MAIN CONTENT */
 #content {
-    background-color: burlywood;
+    background-color: var(--nav-bg);
     scroll-snap-type: y mandatory;
+    overflow-y: visible;
 }
 
 /* CUSTOM SCROLLBAR */
-#content {
-    scrollbar-width: thin;
-    scrollbar-color: darkgray whitesmoke;
-    
+#content::-webkit-scrollbar {
+    width: 1.5vw;
+}
+
+#content::-webkit-scrollbar-track {
+    background-color: var(--nav-bg);
+    border-radius: 20px;
+}
+
+#content::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+}
+
+#content::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.35);
 }
 
 /* MAIN CONTENT PAGES COMMON STYLES */
@@ -86,27 +101,25 @@ body {
 /* PAGE 1 */
 #page-1 {
     background-color: var(--page-1-bg);
-}
-
-#page-1 p {
     font-size: 1.25rem;
-    
 }
 
 #page-1 #row {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    gap: 20px;
 }
 
 #page-1 #row #col-1 {
-    /* background-color: greenyellow; */
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
 #page-1 #row #col-1 #title-bold {
-    font-size: 3.5rem;
+    width: 100%;
+    font-size: 3.2rem;
     font-weight: bold;
     margin-bottom: 16px;
 }
@@ -117,6 +130,7 @@ body {
 
 #page-1 #row #col-1 p {
     margin-bottom: 32px;
+    text-align: justify;
 }
 
 #page-1 #row #col-1 p span {
@@ -140,7 +154,7 @@ body {
     white-space: nowrap;
     transition: background-color .5s ease;
 }
-  
+
 #page-1 #row #col-1 button#contact-us:hover,
 #page-1 #row #col-1 button#contact-us:focus {
     background-color: var(--btn-hover-bg);
@@ -148,17 +162,13 @@ body {
 }
 
 #page-1 #row #col-2 {
-    /* background-color: gainsboro; */
     flex: 1;
     position: relative;
 }
 
 #page-1 #row #col-2 .flag {
     width: 120px;
-    /* height: 70px; */
-    /* height: auto; */
     aspect-ratio: 3 / 2;
-    /* background-color: blue; */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -196,6 +206,7 @@ body {
 #page-2 {
     background-color: var(--page-2-bg);
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
@@ -214,6 +225,7 @@ body {
     font-weight: bolder;
     height: 5rem;
     text-align: center;
+    margin-bottom: 16px;
 }
 
 #page-2 .card .card-details {
@@ -222,7 +234,6 @@ body {
 
 #page-2 .card .card-details ul {
     list-style-type: disc;
-    /* margin-left: 10px; */
 }
 
 #page-2 .card .card-details ul li::before {
@@ -234,153 +245,43 @@ body {
 #page-3 {
     background-color: var(--page-3-bg);
     position: relative;
-    /* display: grid;
-    grid-template-rows: 1.5fr 5fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-    "title title"
-    "col-1 col-2"; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    /* padding: 0; */
     padding-top: 30px;
     padding-bottom: 50px;
 }
 
 #page-3 #contact-us-title {
-    /* grid-area: title; */
-    /* background-color: gold; */
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2.5rem;
     font-weight: bolder;
 }
 
-#page-3 #contact-us-form {
-    grid-area: col-1;
-    /* background-color: chartreuse; */
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-around; */
-    gap: 8px;
-    padding: 16px;
-    /* padding-top: auto;
-    padding-bottom: auto;
-    padding-left: 16px;
-    padding-right: 16px; */
-    font-family: 'Poppins', sans-serif;
-}
-
-#page-3 #contact-us-form #name,
-#page-3 #contact-us-form #email,
-#page-3 #contact-us-form #message {
-    width: 100%;
-    border: 1px solid #ccc;
-    background: #FFF;
-    margin: 0 0 5px;
-    padding: 10px;
-    border-radius: 4px;
-    font-family: 'Poppins', sans-serif;
-}
-
-#page-3 #contact-us-form #name:hover,
-#page-3 #contact-us-form #email:hover,
-#page-3 #contact-us-form #message:hover {
-    -webkit-transition: border-color 0.3s ease-in-out;
-    -moz-transition: border-color 0.3s ease-in-out;
-    transition: border-color 0.3s ease-in-out;
-    border: 1px solid #aaa;
-}
-
-#page-3 #contact-us-form #name:active,
-#page-3 #contact-us-form #email:active,
-#page-3 #contact-us-form #message:active {
-    outline: 0;
-    border: 1px solid #aaa;
-}
-
-#page-3 #contact-us-form #name:focus,
-#page-3 #contact-us-form #email:focus,
-#page-3 #contact-us-form #message:focus {
-    outline: 0;
-    border: 1px solid #aaa;
-}
-
-#page-3 #contact-us-form textarea {
-    flex: 1;
-    resize: none;
-}
-
-#page-3 #contact-us-form button#send {
-    background-color: var(--btn-bg);
-    border: none;
-    border-radius: .25rem;
-    color: var(--highlight-text);
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0 1.5rem;
-    padding-inline: 1.5rem;
-    width: 12rem;
-    height: 3rem;
-    block-size: 3rem;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background-color .5s ease;
-    align-self: flex-end;
-}
-
-#page-3 #contact-us-form button#send:hover,
-#page-3 #contact-us-form button#send:focus {
-    background-color: var(--btn-hover-bg);
-    outline: none;
-}
-
 #page-3 #contact-us-info-container {
     flex: 1;
-    width: 50vw;
+    width: 70vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: chartreuse; */
 }
 
 #page-3 #contact-us-info {
-    width: 80%;
-    height: 65%;
-    grid-area: col-2;
-    /* background-color: skyblue; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center; */
-    /* padding: 50px auto 50px 100px; */
-    /* padding-top: 50px;
-    padding-bottom: 100px; */
-    /* padding-left: 100px; */
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: repeat(1fr, 3);
+    row-gap: 50px;
     padding-top: 20px;
     padding-left: 20px;
 }
 
-/* #page-3 #contact-us-info .info-line {
-    display: flex;
-    justify-content: space-around;
-    text-align: left;
-    background-color: chartreuse;
-    width: 40vw;
-    padding-left: 20px;
-} */
-
 #page-3 #contact-us-info .icon {
     width: 40px;
     height: 40px;
-    /* background-color: yellowgreen; */
 }
 
 #page-3 #contact-us-info #icon-gps {
@@ -401,7 +302,6 @@ body {
 #page-3 #contact-us-info .text {
     display: flex;
     align-items: flex-start;
-    /* font-family: 'Poppins', sans-serif; */
     font-size: 1.2rem;
 }
 
@@ -428,4 +328,72 @@ body {
 #page-3 button#go-to-top:active {
     background-color: rgba(255, 255, 255, 0.8);
     outline: none;
+}
+
+/* ========== RESPONSIVE ========== */
+@media screen and (max-width: 768px) {
+    #nav #title-logo::before {
+        content: "T O G";
+    }
+
+    #content {
+        scroll-snap-type: none;
+    }
+
+    #page-1,
+    #page-2,
+    #page-3 {
+        min-height: calc(100vh - 80px);
+        height: fit-content;
+    }
+
+    #page-1 #row {
+        flex-direction: column;
+    }
+
+    #page-1 #row #col-1 #title-bold {
+        height: fit-content;
+        text-align: center;
+    }
+
+    #page-1 #row #col-1 #title-bold span {
+        text-align: center;
+    }
+
+    #page-1 #row #col-1 button#contact-us {
+        align-self: center;
+    }
+
+    #page-1 #row #col-2 {
+        min-height: 450px;
+        height: fit-content;
+    }
+
+    #page-2 {
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    #page-2 .card {
+        width: 70vw;
+    }
+
+    #page-3 #contact-us-info-container {
+        width: 90vw;
+    }
+    
+    #page-3 #contact-us-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #page-3 #contact-us-info .text {
+        margin-bottom: 50px;
+        font-size: 1.4rem;
+        text-align: center;
+    }
 }
