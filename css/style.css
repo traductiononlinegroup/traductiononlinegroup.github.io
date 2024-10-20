@@ -1,12 +1,18 @@
-/* 0.25rem  -> 4px */
-/* 1rem     -> 16px */
-/* 2rem     -> 32px */
-/* 3rem     -> 48px */
-/* 3.5rem   -> 56px */
-/* 4rem     -> 64px */
+/* VARIABLES */
+:root {
+    --nav-bg: #154360;
+    --page-1-bg: #aed6f1;
+    --page-2-bg: #85c1e9;
+    --page-3-bg: #5dade2;
+    --card-bg: #d5f5e3;
+    --btn-bg: #1D4ED8;
+    --btn-hover-bg: #3B82F6;
+    --highlight-text: #f7f9f9;
+    --text-color: #17202a;
+}
 
 /* GENERAL STYLING */
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -14,6 +20,10 @@
     /* overflow-y: hidden; */
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: var(--text-color);
 }
 
 /* GLOBAL CONTAINER */
@@ -26,7 +36,7 @@
 
 /* NAVIGATION BAR */
 #nav {
-    background-color: cadetblue;
+    background-color: var(--nav-bg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +45,7 @@
 #nav #title-logo {
     font-size: 2.5rem;
     font-weight: bolder;
-    color: #FFFFFF;
+    color: var(--highlight-text);
     text-shadow: 0 0 10px rgba(255, 255, 255, .4);
 }
 
@@ -48,7 +58,7 @@
 /* CUSTOM SCROLLBAR */
 #content {
     scrollbar-width: thin;
-    scrollbar-color: whitesmoke gainsboro;
+    scrollbar-color: darkgray whitesmoke;
     
 }
 
@@ -61,7 +71,7 @@
 
 /* PAGE 1 */
 #page-1 {
-    background-color: blueviolet;
+    background-color: var(--page-1-bg);
 }
 
 #page-1 p {
@@ -100,10 +110,10 @@
 }
 
 #page-1 #row #col-1 button#contact-us {
-    background-color: #1D4ED8;
+    background-color: var(--btn-bg);
     border: none;
     border-radius: .25rem;
-    color: #fff;
+    color: var(--highlight-text);
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 500;
@@ -114,12 +124,12 @@
     block-size: 3rem;
     cursor: pointer;
     white-space: nowrap;
-    transition: background-color .3s ease;
+    transition: background-color .5s ease;
 }
   
 #page-1 #row #col-1 button#contact-us:hover,
 #page-1 #row #col-1 button#contact-us:focus {
-    background-color: #3B82F6;
+    background-color: var(--btn-hover-bg);
     outline: none;
 }
 
@@ -170,24 +180,64 @@
 
 /* PAGE 2 */
 #page-2 {
-    background-color: brown;
+    background-color: var(--page-2-bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#page-2 .card {
+    width: 25vw;
+    height: calc(100vh - 80px - 20%);
+    background-color: var(--card-bg);
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 0 32px rgba(255, 255, 255, 0.6);
+}
+
+#page-2 .card .card-title {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    height: 5rem;
+    text-align: center;
+}
+
+#page-2 .card .card-details {
+    line-height: 1.5rem;
+}
+
+#page-2 .card .card-details ul {
+    list-style-type: disc;
+    /* margin-left: 10px; */
+}
+
+#page-2 .card .card-details ul li::before {
+    content: '> ';
+    margin-right: 16px;
 }
 
 /* PAGE 3 */
 #page-3 {
-    background-color: tomato;
+    background-color: var(--page-3-bg);
     position: relative;
-    display: grid;
+    /* display: grid;
     grid-template-rows: 1.5fr 5fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     "title title"
-    "col-1 col-2";
-    padding: 0;
+    "col-1 col-2"; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    /* padding: 0; */
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 
 #page-3 #contact-us-title {
-    grid-area: title;
+    /* grid-area: title; */
     /* background-color: gold; */
     display: grid;
     place-items: center;
@@ -251,10 +301,10 @@
 }
 
 #page-3 #contact-us-form button#send {
-    background-color: #1D4ED8;
+    background-color: var(--btn-bg);
     border: none;
     border-radius: .25rem;
-    color: #fff;
+    color: var(--highlight-text);
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 500;
@@ -265,20 +315,23 @@
     block-size: 3rem;
     cursor: pointer;
     white-space: nowrap;
-    transition: background-color .3s ease;
+    transition: background-color .5s ease;
     align-self: flex-end;
 }
 
 #page-3 #contact-us-form button#send:hover,
 #page-3 #contact-us-form button#send:focus {
-    background-color: #3B82F6;
+    background-color: var(--btn-hover-bg);
     outline: none;
 }
 
 #page-3 #contact-us-info-container {
+    flex: 1;
+    width: 50vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: chartreuse; */
 }
 
 #page-3 #contact-us-info {
@@ -353,8 +406,12 @@
     border: none;
     background-image: url(/img/up-arrows.png);
     background-size: cover;
+    transition: background-color .5s ease;
 }
 
-#page-3 button#go-to-top:hover {
+#page-3 button#go-to-top:hover,
+#page-3 button#go-to-top:focus,
+#page-3 button#go-to-top:active {
     background-color: rgba(255, 255, 255, 0.8);
+    outline: none;
 }
