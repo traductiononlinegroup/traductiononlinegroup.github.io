@@ -42,6 +42,20 @@ body {
     align-items: center;
 }
 
+#nav #logo {
+    width: 50px;
+    height: 50px;
+    /* padding: 5px;
+    margin: 5px; */
+    position: absolute;
+    left: 30px;
+    border-radius: 50%;
+    background-image: url(/img/foreign-language_7177869.png);
+    background-size: cover;
+    /* background-color: var(--highlight-text); */
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.8);
+}
+
 #nav #title-logo {
     font-size: 2.5rem;
     font-weight: bolder;
