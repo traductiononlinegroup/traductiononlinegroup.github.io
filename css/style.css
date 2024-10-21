@@ -39,15 +39,16 @@ body {
 #nav {
     background-color: var(--nav-bg);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding-inline: 30px;
 }
 
 #nav #logo {
     width: 50px;
     height: 50px;
-    position: absolute;
-    left: 30px;
+    /* position: absolute;
+    left: 30px; */
     border-radius: 50%;
     background-image: url(/img/foreign-language_7177869.png);
     background-size: cover;
@@ -63,6 +64,18 @@ body {
 
 #nav #title-logo::before {
     content: "TRADUCTION ONLINE GROUP";
+}
+
+#nav #language-picker {
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#nav #language-picker:focus,
+#nav #language-picker:active {
+    outline: none;
 }
 
 /* MAIN CONTENT */
@@ -241,6 +254,11 @@ body {
     margin-right: 16px;
 }
 
+#page-2 .card:nth-child(3) .card-details ul li:nth-child(1)::before {
+    content: '';
+    margin-right: 0;
+}
+
 /* PAGE 3 */
 #page-3 {
     background-color: var(--page-3-bg);
@@ -258,6 +276,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 2.5rem;
     font-weight: bolder;
 }
@@ -332,6 +351,10 @@ body {
 
 /* ========== RESPONSIVE ========== */
 @media screen and (max-width: 768px) {
+    #nav {
+        height: 80px;
+    }
+    
     #nav #title-logo::before {
         content: "T O G";
     }
